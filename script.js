@@ -131,7 +131,7 @@ for (const [idx, element] of a.entries()) {
 }
 
 const buf = new ArrayBuffer(16);   // 在内存中分配16 字节
-alert(buf.byteLength);               // 16
+// alert(buf.byteLength);               // 16
 
 /*
 // DataView默认使用整个ArrayBuffer
@@ -158,3 +158,13 @@ alert(secondHalfDataView.byteLength);        // 8
 alert(secondHalfDataView.buffer === buf);   // true
 */
         
+let dest, src, result1;
+
+dest = {};
+src = {
+  id: 'src'
+};
+result1 = Object.assign(dest, src);
+result1 = Object.assign(dest, {a: 'foo'}, {b: 'bar'}); // {id: "src", a: "foo", b: "bar"}
+
+
